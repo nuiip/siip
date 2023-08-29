@@ -1,13 +1,13 @@
-<!-- Body Field -->
-<div class="col-sm-12">
-    {!! Form::label('body', 'Body:') !!}
-    <p>{{ $test->body }}</p>
-</div>
-
 <!-- Title Field -->
 <div class="col-sm-12">
     {!! Form::label('title', 'Title:') !!}
     <p>{{ $test->title }}</p>
+</div>
+
+<!-- Body Field -->
+<div class="col-sm-12">
+    {!! Form::label('body', 'Body:') !!}
+    <p>{{ $test->body }}</p>
 </div>
 
 <!-- Status Field -->

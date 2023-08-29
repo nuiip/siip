@@ -6,27 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @OA\Schema(
- *      schema="Test",
- *      required={"title"},
+ *      schema="Register",
+ *      required={"username","email","password"},
  *      @OA\Property(
- *          property="title",
+ *          property="username",
  *          description="",
  *          readOnly=false,
  *          nullable=false,
  *          type="string",
  *      ),
  *      @OA\Property(
- *          property="body",
+ *          property="email",
  *          description="",
  *          readOnly=false,
- *          nullable=true,
+ *          nullable=false,
  *          type="string",
  *      ),
  *      @OA\Property(
- *          property="status",
+ *          property="password",
  *          description="",
  *          readOnly=false,
- *          nullable=true,
+ *          nullable=false,
  *          type="string",
  *      ),
  *      @OA\Property(
@@ -46,26 +46,26 @@ use Illuminate\Database\Eloquent\Model;
  *          format="date-time"
  *      )
  * )
- */class Test extends Model
+ */class Register extends Model
 {
-    public $table = 'tests';
+    public $table = 'users';
 
     public $fillable = [
-        'title',
-        'body',
-        'status'
+        'username',
+        'email',
+        'password'
     ];
 
     protected $casts = [
-        'title' => 'string',
-        'body' => 'string',
-        'status' => 'string'
+        'username' => 'string',
+        'email' => 'string',
+        'password' => 'string'
     ];
 
     public static array $rules = [
-        'title' => 'required',
-        'body' => 'max:255',
-        'status' => 'max:1'
+        'username' => 'required|min:3|max:25',
+        'email' => 'required|email|max:100',
+        'password' => 'required|min:6'
     ];
 
     

@@ -12,3 +12,10 @@
         <p>Tests</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('auths.index') }}" class="nav-link {{ Request::is('auths*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Auths</p>
+    </a>
+</li>

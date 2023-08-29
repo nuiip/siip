@@ -28,6 +28,7 @@ class TestAPIController extends AppBaseController
      *      path="/tests",
      *      summary="getTestList",
      *      tags={"Test"},
+     *      security={{"sanctum":{}}},
      *      description="Get all Tests",
      *      @OA\Response(
      *          response=200,
@@ -67,6 +68,7 @@ class TestAPIController extends AppBaseController
      *      path="/tests",
      *      summary="createTest",
      *      tags={"Test"},
+     *      security={{"sanctum":{}}},
      *      description="Create Test",
      *      @OA\RequestBody(
      *        required=true,
@@ -107,6 +109,7 @@ class TestAPIController extends AppBaseController
      *      path="/tests/{id}",
      *      summary="getTestItem",
      *      tags={"Test"},
+     *      security={{"sanctum":{}}},
      *      description="Get Test",
      *      @OA\Parameter(
      *          name="id",
@@ -155,6 +158,7 @@ class TestAPIController extends AppBaseController
      *      path="/tests/{id}",
      *      summary="updateTest",
      *      tags={"Test"},
+     *      security={{"sanctum":{}}},
      *      description="Update Test",
      *      @OA\Parameter(
      *          name="id",
@@ -211,6 +215,7 @@ class TestAPIController extends AppBaseController
      *      path="/tests/{id}",
      *      summary="deleteTest",
      *      tags={"Test"},
+     *      security={{"sanctum":{}}},
      *      description="Delete Test",
      *      @OA\Parameter(
      *          name="id",

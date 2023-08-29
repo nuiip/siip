@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id('id');
-            $table->string('body');
             $table->string('title');
-            $table->enum('status');
+            $table->string('body');
+            $table->enum('status', ['0', '1']);
             $table->timestamps();
         });
     }

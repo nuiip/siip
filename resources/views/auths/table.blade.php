@@ -1,28 +1,30 @@
 <div class="card-body p-0">
     <div class="table-responsive">
-        <table class="table" id="tests-table">
+        <table class="table" id="auths-table">
             <thead>
             <tr>
-                <th>Title</th>
-                <th>Body</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($tests as $test)
+            @foreach($auths as $auth)
                 <tr>
-                    <td>{{ $test->title }}</td>
-                    <td>{{ $test->body }}</td>
-                    <td>{{ $test->status }}</td>
+                    <td>{{ $auth->username }}</td>
+                    <td>{{ $auth->email }}</td>
+                    <td>{{ $auth->password }}</td>
+                    <td>{{ $auth->status }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['tests.destroy', $test->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['auths.destroy', $auth->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('tests.show', [$test->id]) }}"
+                            <a href="{{ route('auths.show', [$auth->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('tests.edit', [$test->id]) }}"
+                            <a href="{{ route('auths.edit', [$auth->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
@@ -38,7 +40,7 @@
 
     <div class="card-footer clearfix">
         <div class="float-right">
-            @include('adminlte-templates::common.paginate', ['records' => $tests])
+            @include('adminlte-templates::common.paginate', ['records' => $auths])
         </div>
     </div>
 </div>

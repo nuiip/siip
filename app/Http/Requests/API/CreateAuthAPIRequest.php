@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\API;
 
-use App\Models\Test;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Auth;
+use InfyOm\Generator\Request\APIRequest;
 
-class CreateTestRequest extends FormRequest
+class CreateAuthAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,6 @@ class CreateTestRequest extends FormRequest
      */
     public function rules()
     {
-        return Test::$rules;
+        return Auth::$rules;
     }
 }

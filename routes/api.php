@@ -10,8 +10,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 });
 
-Route::resource('users', App\Http\Controllers\API\UsersAPIController::class)
-    ->except(['create', 'edit']);
+Route::resource('auth', App\Http\Controllers\API\AuthAPIController::class)
+    ->except(['register', 'login']);
 
 Route::resource('tests', App\Http\Controllers\API\TestAPIController::class)
-    ->except(['create', 'edit']);
+    ->except(['create', 'edit'])
+    ->middleware('auth');

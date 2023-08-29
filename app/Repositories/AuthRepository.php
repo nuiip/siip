@@ -2,14 +2,14 @@
 
 namespace App\Repositories;
 
-use App\Models\Test;
+use App\Models\Auth;
 use App\Repositories\BaseRepository;
 
-class TestRepository extends BaseRepository
+class AuthRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        'title',
-        'body',
+        'username',
+        'email',
         'status'
     ];
 
@@ -20,6 +20,6 @@ class TestRepository extends BaseRepository
 
     public function model(): string
     {
-        return Test::class;
+        return Auth::class;
     }
 }
